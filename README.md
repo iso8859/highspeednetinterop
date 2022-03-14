@@ -33,15 +33,15 @@ DWORD Processing::MainThread()
 
 In ImageController.cs you'll see all API entry point.
 
-The 3 method all have almost the same execution time.
+The 3 methods have almost the same execution time.
 
-Tested with Apache AB 
+Tested with Apache AB.
 
 ````
 ab.exe -n 50000 -c 4 http://localhost:5000/Image/managed/hello
 ````
 
-I had to start several ab.exe in parrallel to go to Kestrel limit.
+I had to start 16 ab.exe in parallel to go to Kestrel limit.
 
 On my AMD 7 2700X 8 cores (16 threads) I can achieve
 - 10868 request/s for Int1 interop implementation
@@ -55,3 +55,5 @@ Interop have almost no cost because the Marshal calls have almost no cost.
 Synchronisation object ManualResetEvent is also very cheap in execution time.
 
 Of course we spent more time on Int1 because the implementation is more complex and uses many system calls.
+
+No unsafe code here, Marshal class is very well designed.

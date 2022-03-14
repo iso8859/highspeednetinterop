@@ -61,6 +61,7 @@ DWORD Processing::MainThread()
 			SetEvent(pData->receiveEvent); // Tell the caller processing is done
 		}
 	}
+	delete[] h;
 	return counter;
 }
 

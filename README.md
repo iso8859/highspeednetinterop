@@ -6,6 +6,8 @@ The objective was to measure the execution time cost of interop with C++ code.
 
 TL;DR; Good news, no effect, you can go, with interop.
 
+This project is also a good example on how to use C++ interop from C# if you are new on this subject. You must have a good knowledge of the mechanisms of the C++ world, memory allocations, pointers, memory management.
+
 I had in mind interop have a big cost on execution time. It was a mistake or bad test. 
 This is why I created IPC C++ class that start a thread and do a infinite loop waiting for
 synchonisation object to read/write common C++/C# data.
